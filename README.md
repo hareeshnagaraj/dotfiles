@@ -40,3 +40,8 @@ Required for python3 support
 ```
 brew install vim --with-override-system-vi
 ```
+
+### Useful Links
+
+TIG
+https://jonas.github.io/tig/INSTALL.html
