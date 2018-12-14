@@ -52,3 +52,9 @@ fi
 # Convenient shortcut to start livedown monitoring
 # https://www.npmjs.com/package/livedown
 alias livedown='livedown start README.md  --port 1337'
+alias docker-compose-prod='docker-compose -f docker-compose.base.yml -f docker-compose.prod.yml'
+alias docker-compose-dev='docker-compose -f docker-compose.base.yml -f docker-compose.dev.yml'
+alias docker-prune-f='docker container prune -f & docker volume prune -f'
+alias docker-discprov-rm-f='docker-compose-dev rm -f & docker volume prune -f'
+
+alias aws='/Users/hareeshnagaraj/.local/lib/aws/bin/aws'
