@@ -58,3 +58,6 @@ alias docker-prune-f='docker container prune -f & docker volume prune -f'
 alias docker-discprov-rm-f='docker-compose-dev rm -f & docker volume prune -f'
 
 alias aws='/Users/hareeshnagaraj/.local/lib/aws/bin/aws'
+# Usage
+# `grep -HRn "search term" [directory]`
+alias grepss='grep -Hrn'
