@@ -60,6 +60,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#branch#enabled = 1
+let g:airline_theme='dark'
 set laststatus=2
 
 " Extra syntax plugins
@@ -90,6 +91,8 @@ NeoBundle 'ambv/black'
 " NeoBundle 'vim-syntastic/syntastic'
 " NeoBundle 'vim-python/python-syntax'
 NeoBundle 'hdima/python-syntax'
+
+NeoBundle 'leafgarland/typescript-vim'
 
 let g:python_highlight_all=1
 
@@ -128,7 +131,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 au FileType python setl sw=4 sts=4 et
-set textwidth=90
+set textwidth=200
 set autoindent
 
 " End NeoBundle configuration (no calls to NeoBundle below this line)

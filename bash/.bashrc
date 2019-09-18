@@ -10,7 +10,7 @@ export TERM=xterm-256color
 
 source ~/dotfiles/git/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1="\[[33m\]\A \[[32m\]\u@\h \[[34m\]\w\$(__git_ps1) \$ \[[0m\]"
+# export PS1="\[[33m\]\A \[[32m\]\u@\h \[[34m\]\w\$(__git_ps1) \$ \[[0m\]"
 export PATH=$PATH:~/Scripts
 
 ### Aliases and function helpers ###
@@ -61,3 +61,40 @@ alias aws='/Users/hareeshnagaraj/.local/lib/aws/bin/aws'
 # Usage
 # `grep -HRn "search term" [directory]`
 alias grepss='grep -Hrn'
+
+alias ktiller='export TILLER_NAMESPACE=tiller
+tiller -listen=localhost:44134 -storage=secret -logtostderr'
+
+# aliases for quick navigate to folders
+alias ap='cd ~/Development/audius-protocol'
+alias cn='cd ~/Development/audius-protocol/creator-node'
+alias cs='cd ~/Development/audius-protocol/content-service'
+alias dp='cd ~/Development/audius-protocol/discovery-provider'
+alias libs='cd ~/Development/audius-protocol/libs'
+alias is='cd ~/Development/audius-protocol/identity-service'
+alias tool='cd ~/Development/audius-tooling'
+alias dapp='cd ~/Development/audius-dapp'
+alias kube='cd ~/Development/audius-k8s'
+
+alias k='kubectl'
+alias ks='kubectl -n stage'
+alias kp='kubectl -n production'
+alias ksw='watch kubectl -n stage get pods,svc,pvc'
+alias kpw='watch kubectl -n production get pods,svc,pvc'
+alias kuseprod='k config use-context arn:aws:eks:us-west-2:526177477460:cluster/audius-production'
+alias kusestage='k config use-context arn:aws:eks:us-west-2:526177477460:cluster/audius-stage-xl'
+
+export TILLER_NAMESPACE=tiller
+export HELM_HOST=:44134
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+
+AWS_DEFAULT_REGION=us-west-1
+
+alias k=kubectl
+source <(kubectl completion bash | sed s/kubectl/k/g)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
