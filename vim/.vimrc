@@ -24,6 +24,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Solarized colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 
+" Dracula colorscheme
+NeoBundle 'dracula/vim'
+
+" xcode colorscheme
+NeoBundle 'arzg/vim-colors-xcode'
+
 " Show guides for indent levels
 NeoBundle 'nathanaelkane/vim-indent-guides'
 nmap <leader>i :IndentGuidesToggle<CR>
@@ -65,7 +71,8 @@ set laststatus=2
 
 " Extra syntax plugins
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tomlion/vim-solidity'
+" NeoBundle 'tomlion/vim-solidity'
+NeoBundle 'TovarishFin/vim-solidity'
 
 " JS Linter Ale
 NeoBundle 'w0rp/ale'
@@ -92,7 +99,18 @@ NeoBundle 'ambv/black'
 " NeoBundle 'vim-python/python-syntax'
 NeoBundle 'hdima/python-syntax'
 
-NeoBundle 'leafgarland/typescript-vim'
+" NeoBundle 'leafgarland/typescript-vim'
+" js
+NeoBundle 'yuezk/vim-js'
+
+" jsx
+NeoBundle 'HerringtonDarkholme/yats.vim'
+NeoBundle 'maxmellon/vim-jsx-pretty'
+
+" Note taking
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-notes'
+let g:notes_directories=['~/Development/vim-notes']
 
 let g:python_highlight_all=1
 
@@ -138,11 +156,15 @@ set autoindent
 call neobundle#end()
 
 " Finish colorscheme initialization
-let g:solarized_bold = 0
-let g:solarized_contrast = "high"
-let g:solarized_termtrans = 1
-set background=dark
-colorscheme solarized
+" let g:solarized_bold = 0
+" let g:solarized_contrast = "high"
+" let g:solarized_termtrans = 1
+" set background=dark
+" colorscheme solarized
+
+let g:dracula_italic = 0
+let g:dracula_colorterm = 0
+colorscheme xcodedarkhc
 
 " Required per NeoBundle docs
 filetype plugin indent on
@@ -151,6 +173,8 @@ filetype plugin indent on
 inoremap jj <esc>
 
 set backspace=indent,eol,start
+
+set lazyredraw
 
 " Verify NeoBundle installation
 NeoBundleCheck

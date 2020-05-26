@@ -10,7 +10,6 @@ export TERM=xterm-256color
 
 source ~/dotfiles/git/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
-# export PS1="\[[33m\]\A \[[32m\]\u@\h \[[34m\]\w\$(__git_ps1) \$ \[[0m\]"
 export PATH=$PATH:~/Scripts
 
 ### Aliases and function helpers ###
@@ -57,7 +56,6 @@ alias docker-compose-dev='docker-compose -f docker-compose.base.yml -f docker-co
 alias docker-prune-f='docker container prune -f & docker volume prune -f'
 alias docker-discprov-rm-f='docker-compose-dev rm -f & docker volume prune -f'
 
-alias aws='/Users/hareeshnagaraj/.local/lib/aws/bin/aws'
 # Usage
 # `grep -HRn "search term" [directory]`
 alias grepss='grep -Hrn'
@@ -75,25 +73,33 @@ alias is='cd ~/Development/audius-protocol/identity-service'
 alias tool='cd ~/Development/audius-tooling'
 alias dapp='cd ~/Development/audius-dapp'
 alias kube='cd ~/Development/audius-k8s'
+alias spdash='cd ~/Development/sp-dashboard'
 
 alias k='kubectl'
 alias ks='kubectl -n stage'
 alias kp='kubectl -n production'
+alias kc='kubectl -n content'
 alias ksw='watch kubectl -n stage get pods,svc,pvc'
 alias kpw='watch kubectl -n production get pods,svc,pvc'
 alias kuseprod='k config use-context arn:aws:eks:us-west-2:526177477460:cluster/audius-production'
 alias kusestage='k config use-context arn:aws:eks:us-west-2:526177477460:cluster/audius-stage-xl'
+alias kusecontent='k config use-context arn:aws:eks:eu-west-1:526177477460:cluster/audius-content-services'
 
 export TILLER_NAMESPACE=tiller
 export HELM_HOST=:44134
 
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
 
 AWS_DEFAULT_REGION=us-west-1
 
 alias k=kubectl
-source <(kubectl completion bash | sed s/kubectl/k/g)
+
+# Cached version of PS1 including user/etc
+# export PS1="\[[33m\]\A \[[32m\]\u@\h \[[34m\]\w\$(__git_ps1) \n\$ \[[0m\]"
+
+# Simpler version of PS1 - eliminate user prefix
+export PS1="\[[33m\]\A \[[32m\]\[[34m\]\w\$(__git_ps1) \n\$ \[[0m\]"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

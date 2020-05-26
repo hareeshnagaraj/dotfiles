@@ -45,3 +45,9 @@ brew install vim --with-override-system-vi
 
 TIG
 https://jonas.github.io/tig/INSTALL.html
+
+-------
+
+ln -s <source> <destination>
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+ensure ~/.zshrc does not exist
